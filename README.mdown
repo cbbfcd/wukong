@@ -1,0 +1,61 @@
+# welcome start the journey with wukong
+> author: @huangteng,@wangting,@chenqiyu
+***
+
+<div align=center>
+    ![wukong](./docs/wukong.png)
+</div>
+
+# 简介
+
+悟空是一个相对而言更简单，更容易上手的react脚手架。汇集了各路大神的思想。再次感谢。
+如果你觉得redux太复杂。那么，尝试拥抱响应式的mobx，下有相关文档。
+而悟空正是基于react-mobx-webpack2-react-router4的脚手架。配置简单、清晰，并且做了大量的优化。
+悟空现在拥有的法力:
+1. webpack2 全面升级到webpack2.6.1
+2. mobx & mobx-react 彻底告别redux
+3. 响应式的程序 ，如果你懂后台，那么你上手更快
+4. react-router4 & lazy route
+5. webpack 打包分析。
+6. airbnb eslint，团队开发，统一规范的利器
+7. 使用dll文件优化，毫秒级启动
+8. 打包出来的文件预览，类似python去启动http.server
+9. 去jquery化，采用axios或者fetch
+未来:
+1. 单元测试配置
+2. 完整demo
+3. 多页面配置
+4. 支持移动app开发
+5. ...
+
+# 使用
+```
+1. git clone https://github.com/cbbfcd/wukong.git
+2. cd到文件 cnpm install 推荐使用阿里镜像
+3. npm run redll 这个操作是打包dll并运行。
+4. 以后就不需要run redll，直接 npm start即可。
+5. 更多cli参考下面的文档
+```
+
+
+# 相关文档
+<a href="./docs/doc.mdown">Go</a>
+
+# 相关命令
+```
+npm start: 启动项目，注意需要先执行npm run dll.
+npm run dll: 打包dll文件.
+npm run build: 生产环境打包，并打开bundle的分析网页.
+npm run redll: 插件升级后运行，会重新打包dll,并启动。建议第一次直接运行此命令
+npm run eslint: 代码规范检查.
+npm run preview: 打包出来的文件 ，启动一个服务预览
+npm run deploy: 插件升级后重新打包dll,并打包成dist文件。
+```
+
+# 声明
+心怀感谢，共建悟空。
+希望大家一起维护、持续的更新、升级悟空。
+
+
+
+
