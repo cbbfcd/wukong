@@ -3,7 +3,7 @@
 ***
 
 <div align=center>
-    ![wukong](./docs/wukong.png)
+    <img src="./docs/wukong.PNG" width="400" height="400" alt="wukong-index"/>
 </div>
 
 # 简介

@@ -15,7 +15,7 @@ export default class TopNav extends Component {
           <a href="https://github.com/cbbfcd/wukong.git">Start</a>
         </div>
         <div className="nav-btn">
-          <a href="../../docs/doc.html">Document</a>
+          <a href="https://github.com/cbbfcd/wukong/blob/master/docs/doc.mdown">Document</a>
         </div>
         <div className="nav-btn">
           <a>Example</a>
