@@ -21,6 +21,9 @@
 7. 使用dll文件优化，毫秒级启动
 8. 打包出来的文件预览，类似python去启动http.server
 9. 去jquery化，采用axios或者fetch
+10. mock模块，faker生成测试数据，前后端分离
+
+
 未来:
 1. 单元测试配置
 2. 完整demo
