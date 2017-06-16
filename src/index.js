@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppContainer } from 'react-hot-loader';
 import { render } from 'react-dom';
 import { Provider } from 'mobx-react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App';
 import { rehydrate, hotRehydrate } from 'rfx-core';
 import './assets/style/main.scss';
@@ -22,11 +22,11 @@ const MOUNT_NODE = document.getElementById('app');
 const renderApp = (AppComponent) => {
   render(
     <AppContainer>
-      <BrowserRouter>
+      <Router>
         <Provider store={__PROD__ ? rehydrate() : hotRehydrate()}>
           <AppComponent />
         </Provider>
-      </BrowserRouter>
+      </Router>
     </AppContainer>,
 		MOUNT_NODE
 	);
