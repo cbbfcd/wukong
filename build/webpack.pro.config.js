@@ -9,16 +9,37 @@ var path = require('path'),
 	env = process.env.NODE_ENV;
 
 module.exports = {
-	devtool: "cheap-module-source-map",
+	//devtool: "cheap-module-source-map",
 	entry: {
-		app: ["babel-polyfill","./src/index"],
-		vendor: ["react", "react-dom", "react-router", "lodash"]
+		app: [path.join(src, 'index.js')],
+		vendor: [
+			"react", 
+			"react-dom", 
+			"react-router", 
+			"lodash", 
+			"mobx", 
+			"mobx-react", 
+			"react-router-dom"
+		]
 	},
 	output: {
-		path: path.join(__dirname, "../dist"),
-		publicPath: "/",
-		filename: "assets/[name].[chunkhash:6].js",
-		chunkFilename: "assets/[id].[chunkhash:6].js"
+		path: path.join(__dirname, "../dist/static"),
+		publicPath: "/static/",
+		filename: "[name].[chunkhash:6].js",
+		chunkFilename: "[id].[chunkhash:6].js"
+	},
+	resolve:{
+		extensions:['.js', '.jsx', '.less', '.css', '.scss', '.json'],
+		alias: {
+			ASSET: path.join(src, 'assets'),
+			COMPONENT: path.join(src, 'components'),
+			STORE: path.join(src, 'store'),
+			UTIL: path.join(src, 'utils'),
+			MOCK:path.join(src, 'mock')
+	    }
+	},
+	resolveLoader: {
+	    modules: [path.join(__dirname, '../node_modules')]
 	},
 	module: {
 		rules: [
@@ -112,7 +133,6 @@ module.exports = {
 		    {
 		      context: path.join(__dirname, '../static'),
 		      from: '**/*',
-		      to:path.join(__dirname, "../dist/assets"),
 		      ignore: ['*.md','*.mdown']
 		    }
 		]),
@@ -125,25 +145,31 @@ module.exports = {
 		}),
 		new webpack.NamedModulesPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
-		    names: ['vendor', 'mainifest'],
-		    minChunks: Infinity
+		    names: ['vendor', 'mainifest']
 		}),
 		new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            compress: {
-                warnings: false,
-                drop_console: true,
-                screw_ie8: true
-            },
-            output: {
-                comments: false
-            }
+			beautify: false,//最紧凑的输出
+			comments: false,//删除注释
+			compress: {
+				warnings: false,//在UglifyJs删除没有用到的代码时不输出警告
+				drop_console: true,//删除所有console语句
+				collapse_vars: true,//内嵌定义了但是只用到一次的变量
+				reduce_vars: true,// 提取出出现多次但是没有定义成变量去引用的静态值
+			}
         }),
-        new ExtractTextPlugin('assets/[name].[contenthash:6].css'),
+        new ExtractTextPlugin('[name].[contenthash:6].css'),
         new HtmlWebpackPlugin({
-            hash: false,
-            template: path.join(src, 'index.html')
+            filename: '../index.html',
+            template: path.join(src, 'index.html'),
+            inject: true,
+            chunksSortMode: 'dependency'
         }),
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				postcss: () => [autoprefixer],//css前缀补全以及兼容
+				url: { limit: 10240 }
+			}
+		}),
         new BundleAnalyzerPlugin({
         	analyzerMode: 'server',
         	analyzerHost: '127.0.0.1',
@@ -151,6 +177,11 @@ module.exports = {
         	reportFilename: 'report.html',
         	openAnalyzer: true,
         	generateStatsFile: false,
-        })
+        }),
+        // dll
+		new webpack.DllReferencePlugin({
+	        context: __dirname,
+	        manifest: require('./dist/manifest.json')
+	    })
 	]
 }

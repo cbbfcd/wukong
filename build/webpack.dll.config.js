@@ -1,6 +1,5 @@
 var path = require("path"),　　
 　　webpack = require("webpack"),
-    AssetsPlugin = require('assets-webpack-plugin'),  
     bundle=[
     	'react',
     	'react-dom',
@@ -18,18 +17,14 @@ module.exports = {
 　　},
 　　output: {	   
         path: path.join(__dirname, "dist"),
-　　　　filename: "[name].[hash].js",
-　　　　library: "[name]_[hash]"
+　　　　filename: "[name].js",
+　　　　library: "[name]"
 　　},
 　　plugins: [
 　　　　new webpack.DllPlugin({
 　　　　　　path: path.join(__dirname, "dist", "manifest.json"),
-　　　　　　name: "[name]_[hash]",
+　　　　　　name: "[name]",
 　　　　　　context: __dirname
-　　　　}),
-        new AssetsPlugin({
-            filename: 'bundle-config.json', 
-            path: path.join(__dirname, "dist")
-        })
+　　　　})
 　　]
 }; 

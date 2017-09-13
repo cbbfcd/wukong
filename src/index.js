@@ -6,8 +6,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App';
 import { rehydrate, hotRehydrate } from 'rfx-core';
 import './assets/style/main.scss';
-import "babel-polyfill";       
+import "babel-polyfill";
+import stores from './store/stores'
 
+const store = rehydrate();
 
 if (__PROD__) {
   console.info('[当前环境]: 生产环境');
@@ -23,7 +25,7 @@ const renderApp = (AppComponent) => {
   render(
     <AppContainer>
       <Router>
-        <Provider store={__PROD__ ? rehydrate() : hotRehydrate()}>
+        <Provider store={__PROD__ ? store : hotRehydrate()}>
           <AppComponent />
         </Provider>
       </Router>

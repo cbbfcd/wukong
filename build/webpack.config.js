@@ -4,7 +4,7 @@ var path = require('path'),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	NyanProgressPlugin = require('nyan-progress-webpack-plugin'),
 	src = path.join(__dirname, '../src'),
-	bundleConfig = require("./dist/bundle-config.json"),
+	HappyPack = require('happypack'),
 	env = process.env.NODE_ENV;
 
 // webpack2配置
@@ -41,7 +41,7 @@ module.exports = {
 	            test: /\.js[x]?$/,
 	            enforce: 'pre',
 	            use: [{
-	                loader: 'eslint-loader', 
+	                loader: 'happypack/loader?id=eslint', 
 	                options: { fix: true }
 	            }],
 	            include: path.resolve(__dirname, '../src/**/*.js'),
@@ -127,6 +127,12 @@ module.exports = {
 	},
     
 	plugins:[
+		new HappyPack({
+			verbose: false,
+			id: 'eslint',
+			threads: 4,
+			loaders: [ 'eslint-loader' ]
+		}),
 		new NyanProgressPlugin(),
 		new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
@@ -135,8 +141,6 @@ module.exports = {
         	hash: false,
         	filename: 'index.html',
         	template: path.join(src, 'index.html'),
-        	bundleName: bundleConfig.vendor["js"],
-        	isProd: env === 'production',
         	inject: true
         }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/),

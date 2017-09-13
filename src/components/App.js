@@ -1,32 +1,32 @@
 
 /**
- * @description: 首页App组件
+ * @description: App component
  */
 
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import LazyRoute from 'lazy-route';
-import { inject, observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
-import TopNav from './example/TopNav';
-import AboutWuKong from './example/AboutWuKong';
+import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
+import { inject, observer } from "mobx-react";
+import LazyRoute from "lazy-route";
+import DevTools from "mobx-react-devtools";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   render() {
     return (
       <div className="index-wrapper">
-        {/* <DevTools />*/}
-        <TopNav />
-
-        <AboutWuKong />
-
+        {/*<DevTools />*/}
+        <Route 
+          exact
+          path = '/'
+          render = { props => (
+            <LazyRoute { ...props } component={ import("./example/Home") } />
+          )}
+        />
       </div>
-
     );
   }
 }
+

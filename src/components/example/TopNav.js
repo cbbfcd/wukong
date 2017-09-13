@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 
 export default class TopNav extends Component {
   constructor(props) {
     super(props);
     this.store = this.props.store;
   }
-
-
   render() {
     return (
       <div className="example-nav">

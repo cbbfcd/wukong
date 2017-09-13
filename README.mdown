@@ -55,6 +55,19 @@ npm run preview: 打包出来的文件 ，启动一个服务预览
 npm run deploy: 插件升级后重新打包dll,并打包成dist文件。
 ```
 
+# 更新
+
+2017-9-13: 
+1. 优化了dll配置，解决生产环境打包的问题。
+2. 加入happypack管理loaders。
+3. 生产环境打包后需要把dll文件，也就是build/dist/vendor手动添加到html中。
+4. 更改了打包之后的目录结构。
+
+# 友情链接
+<a href="https://github.com/cbbfcd/wukong-React-Mobx-TypeScript-.git">Wukong(TS版本)</a>
+
+<a href="https://github.com/cbbfcd/Help.git">Redux-Router-React版本脚手架</a>
+
 # 声明
 心怀感谢，共建悟空。
 希望大家一起维护、持续的更新、升级悟空。

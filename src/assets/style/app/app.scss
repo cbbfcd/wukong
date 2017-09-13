@@ -43,4 +43,35 @@ body{
 			background-size:100%;
 		}
 	}
+	.class-notfound{
+		width: 100%;
+		height:100%;
+		background-color: #e8e8e8;
+		h1{
+			text-align:center;
+			font-size: 200px;
+		}
+	}
+	.pop-win-out{
+		z-index: 1000;
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		background-color: rgba(0, 0, 0, 0.5);
+		overflow:hidden;
+		outline: 0;
+		opacity: 0.5;
+		filter:alpha(opacity=50);
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		.pop-win-in{
+			border-radius: 5px;
+			width:55%;
+			height:60%;
+			background-color:white;
+		}
+	}
 }

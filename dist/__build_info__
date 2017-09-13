@@ -1,0 +1,58 @@
+Hash: 61f095914d87b5c6a80e
+Version: webpack 2.6.1
+Time: 22104ms
+              Asset       Size  Chunks                    Chunk Names
+        0.08e197.js    4.43 kB       0  [emitted]         
+      app.fea9f2.js    1.52 MB       1  [emitted]  [big]  app
+   vendor.f9a0d6.js    71.9 kB       2  [emitted]         vendor
+mainifest.8747a6.js    1.42 kB       3  [emitted]         mainifest
+     app.8b35fc.css    37.8 kB       1  [emitted]         app
+      jquery.min.js    84.3 kB          [emitted]         
+      ../index.html  654 bytes          [emitted]         
+chunk    {0} 0.08e197.js 7.54 kB {1} [rendered]
+ [./src/components/example/AboutWuKong.js] ./src/components/example/AboutWuKong.js 2.51 kB {0} [built]
+ [./src/components/example/Home.js] ./src/components/example/Home.js 2.23 kB {0} [built]
+ [./src/components/example/TopNav.js] ./src/components/example/TopNav.js 2.79 kB {0} [built]
+chunk    {1} app.fea9f2.js, app.8b35fc.css (app) 1.93 MB {2} [initial] [rendered]
+ [./node_modules/_babel-polyfill@6.23.0@babel-polyfill/lib/index.js] ./~/_babel-polyfill@6.23.0@babel-polyfill/lib/index.js 833 bytes {1} [built]
+ [./node_modules/_core-js@2.4.1@core-js/fn/regexp/escape.js] ./~/_core-js@2.4.1@core-js/fn/regexp/escape.js 107 bytes {1} [built]
+ [./node_modules/_core-js@2.4.1@core-js/shim.js] ./~/_core-js@2.4.1@core-js/shim.js 7.38 kB {1} [built]
+ [./node_modules/_mobx-react-devtools@4.2.13@mobx-react-devtools/index.js] ./~/_mobx-react-devtools@4.2.13@mobx-react-devtools/index.js 51.8 kB {1} [built]
+ [./node_modules/_react-hot-loader@3.0.0-beta.7@react-hot-loader/index.js] ./~/_react-hot-loader@3.0.0-beta.7@react-hot-loader/index.js 41 bytes {1} [built]
+ [./node_modules/_react-hot-loader@3.0.0-beta.7@react-hot-loader/lib/index.js] ./~/_react-hot-loader@3.0.0-beta.7@react-hot-loader/lib/index.js 209 bytes {1} [built]
+ [./node_modules/_regenerator-runtime@0.10.5@regenerator-runtime/runtime.js] ./~/_regenerator-runtime@0.10.5@regenerator-runtime/runtime.js 24.4 kB {1} [built]
+ [./src/assets/style/main.scss] ./src/assets/style/main.scss 41 bytes {1} [built]
+ [./src/components/App.js] ./src/components/App.js 2.71 kB {1} [built]
+ [./src/index.js] ./src/index.js 1.03 kB {1} [built]
+ [./src/store/AppState.js] ./src/store/AppState.js 4.2 kB {1} [built]
+ [./src/store/stores.js] ./src/store/stores.js 123 bytes {1} [built]
+    [7] delegated ../node_modules/_rfx-core@1.5.3@rfx-core/lib/index.js from dll-reference vendor 42 bytes {1} [not cacheable] [built]
+   [10] delegated ../node_modules/_lazy-route@1.0.7@lazy-route/lib/index.js from dll-reference vendor 42 bytes {1} [not cacheable] [built]
+   [12] multi ./src/index.js 28 bytes {1} [built]
+     + 1372 hidden modules
+chunk    {2} vendor.f9a0d6.js (vendor) 540 kB {3} [initial] [rendered]
+    [0] external "vendor" 42 bytes {2} [not cacheable]
+    [1] delegated ../node_modules/_react@15.6.1@react/react.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+    [2] delegated ../node_modules/_mobx-react@4.2.1@mobx-react/index.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+    [3] delegated ../node_modules/_react-router-dom@4.1.1@react-router-dom/es/index.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+    [4] delegated ../node_modules/_mobx@3.1.15@mobx/lib/mobx.module.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+    [5] delegated ../node_modules/_webpack@2.6.1@webpack/buildin/global.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+    [6] delegated ../node_modules/_react-dom@15.6.1@react-dom/index.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+    [8] delegated ../node_modules/_react-router@4.1.1@react-router/es/index.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+ [./node_modules/_lodash@4.17.4@lodash/lodash.js] ./~/_lodash@4.17.4@lodash/lodash.js 540 kB {2} [built]
+    [9] delegated ../node_modules/_webpack@2.6.1@webpack/buildin/module.js from dll-reference vendor 42 bytes {2} [not cacheable] [built]
+   [13] multi react react-dom react-router lodash mobx mobx-react react-router-dom 100 bytes {2} [built]
+chunk    {3} mainifest.8747a6.js (mainifest) 0 bytes [entry] [rendered]
+Child html-webpack-plugin for "..\index.html":
+            Asset    Size  Chunks  Chunk Names
+    ../index.html  545 kB       0  
+    chunk    {0} ../index.html 541 kB [entry] [rendered]
+     [./node_modules/_html-webpack-plugin@2.28.0@html-webpack-plugin/lib/loader.js!./src/index.html] ./~/_html-webpack-plugin@2.28.0@html-webpack-plugin/lib/loader.js!./src/index.html 787 bytes {0} [built]
+     [./node_modules/_lodash@4.17.4@lodash/lodash.js] ./~/_lodash@4.17.4@lodash/lodash.js 540 kB {0} [built]
+     [./node_modules/_webpack@2.6.1@webpack/buildin/global.js] (webpack)/buildin/global.js 509 bytes {0} [built]
+     [./node_modules/_webpack@2.6.1@webpack/buildin/module.js] (webpack)/buildin/module.js 517 bytes {0} [built]
+Child extract-text-webpack-plugin:
+    chunk    {0} extract-text-webpack-plugin-output-filename 49.6 kB [entry] [rendered]
+     [./node_modules/_css-loader@0.28.4@css-loader/index.js?{"sourceMap":true}!./node_modules/_postcss-loader@2.0.6@postcss-loader/lib/index.js?{"sourceMap":true}!./node_modules/_resolve-url-loader@2.0.2@resolve-url-loader/index.js!./node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js?{"sourceMap":true}!./src/assets/style/main.scss] ./~/_css-loader@0.28.4@css-loader?{"sourceMap":true}!./~/_postcss-loader@2.0.6@postcss-loader/lib?{"sourceMap":true}!./~/_resolve-url-loader@2.0.2@resolve-url-loader!./~/_sass-loader@6.0.6@sass-loader/lib/loader.js?{"sourceMap":true}!./src/assets/style/main.scss 16.4 kB {0} [built]
+     [./node_modules/_css-loader@0.28.4@css-loader/lib/css-base.js] ./~/_css-loader@0.28.4@css-loader/lib/css-base.js 2.26 kB {0} [built]
+     [./src/assets/images/wukong.jpg] ./src/assets/images/wukong.jpg 30.9 kB {0} [built]
