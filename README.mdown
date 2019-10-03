@@ -1,4 +1,7 @@
 # welcome start the journey with wukong
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/cbbfcd/wukong.svg)](https://greenkeeper.io/)
+
 > author: @huangteng,@wangting,@chenqiyu
 ***
 
